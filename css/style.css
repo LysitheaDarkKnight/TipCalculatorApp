@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+:root {
+  --strong-cyan-color: hsl(172, 67%, 45%);
+  --cyan-color: hsl(173, 61%, 77%);
+  --very-dark-cyan-color: hsl(183, 100%, 15%);
+  --dark-grayish-cyan-color: hsl(186, 14%, 43%);
+  --grayish-cyan-color: hsl(184, 14%, 56%);
+  --light-grayish-cyan-color: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan-color: hsl(189, 41%, 97%);
+  --white-color: hsl(0, 0%, 100%);
+  --error-color: hsl(10, 30%, 58%);
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  position: relative;
+  background-color: var(--light-grayish-cyan-color);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button, input {
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+}
+
+input {
+  color: var(--very-dark-cyan-color);
+  background-color: var(--very-light-grayish-cyan-color);
+  border: none;
+  border-radius: 0.3rem;
+}
+input::placeholder {
+  color: var(--grayish-cyan-color);
+}
+input:focus {
+  border: var(--strong-cyan-color) solid 2px;
+  outline: none;
+}
+
+label {
+  color: var(--grayish-cyan-color);
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.logo {
+  position: absolute;
+  left: 48%;
+  top: 5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+main .container {
+  display: grid;
+  align-items: stretch;
+  justify-content: flex-start;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 57.375rem;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  background-color: var(--white-color);
+  gap: 2rem;
+  box-shadow: 0 1rem 1.5rem rgba(62, 121, 111, 0.1), 0 0.6rem 0.6rem rgba(62, 121, 111, 0.07);
+}
+main .container .calculation {
+  display: grid;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+main .container .calculation .form-group {
+  position: relative;
+}
+main .container .calculation .form-group .label {
+  display: flex;
+  flex-direction: space-between;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+main .container .calculation .form-group .label .error {
+  margin-left: auto;
+}
+main .container .calculation .form-group label {
+  margin-bottom: 0.5rem;
+}
+main .container .calculation .form-group .form-control, main .container .calculation .form-group #custom {
+  text-align: end;
+  min-width: 100%;
+  padding: 0.3rem 1rem;
+}
+main .container .calculation .form-group img {
+  position: absolute;
+  left: 1rem;
+  top: 2.8rem;
+}
+main .container .calculation .form-group .tip-selection {
+  display: grid;
+  align-items: stretch;
+  justify-content: flex-start;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin-top: 0.7rem;
+  gap: 1rem;
+  list-style: none;
+}
+main .container .calculation .form-group .tip-selection button {
+  background-color: var(--very-dark-cyan-color);
+  border: none;
+  color: var(--very-light-grayish-cyan-color);
+}
+main .container .calculation .form-group .tip-selection button:hover {
+  color: var(--very-dark-cyan-color);
+  background-color: var(--cyan-color);
+}
+main .container .calculation .form-group .tip-selection button:focus {
+  color: var(--very-dark-cyan-color);
+  background-color: var(--strong-cyan-color);
+}
+main .container .calculation .form-group .tip-selection__option {
+  width: 7.5rem;
+  height: 3rem;
+  border-radius: 0.3rem;
+}
+main .container .calculation .form-group .tip-selection input::placeholder {
+  color: var(--very-dark-cyan-color) !important;
+  text-align: center;
+}
+main .container .total {
+  background-color: var(--very-dark-cyan-color);
+  border-radius: 0.75rem;
+  display: grid;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 2.375rem;
+  box-shadow: 0 0.7rem 1.4rem rgba(182, 196, 195, 0.19), 0 0.3rem 0.3rem rgba(182, 196, 195, 0.23);
+}
+main .container .total .result {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+main .container .total .result p {
+  width: 7rem;
+  color: var(--white-color);
+}
+main .container .total .result p span {
+  color: var(--grayish-cyan-color);
+  font-size: 0.85rem;
+}
+main .container .total .result__calculation input {
+  width: 13rem;
+  text-align: end;
+  background-color: var(--very-dark-cyan-color);
+  color: var(--strong-cyan-color);
+  font-size: 3rem;
+}
+main .container .total .result:nth-child(2) {
+  margin-bottom: 6rem;
+}
+main .container .total .reset {
+  cursor: pointer;
+  background-color: var(--strong-cyan-color);
+  opacity: 0.15;
+}
+main .container .total .reset:hover {
+  background-color: var(--cyan-color);
+}
+
+@media (max-width: 56rem) {
+  .logo {
+    left: 45%;
+  }
+  main {
+    padding-top: 9rem;
+  }
+  main .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    max-width: 23.4375rem;
+    padding: 2rem;
+  }
+  main .container .calculation {
+    gap: 2rem;
+  }
+  main .container .calculation .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+  }
+  main .container .calculation .form-group .tip-selection {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  main .container .calculation .form-group .tip-selection__option {
+    width: 9.7rem;
+  }
+  main .container .total {
+    padding: 1.375rem;
+  }
+  main .container .total .result__calculation input {
+    width: 10rem;
+    font-size: 2rem;
+  }
+  main .container .total .result:nth-child(2) {
+    margin-bottom: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */

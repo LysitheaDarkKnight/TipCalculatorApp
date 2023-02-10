@@ -1,0 +1,44 @@
+// Set Text color based on bg
+
+@function set-text-color($color) {
+    @if(lightness($color) > 80){
+        @return #333;
+    } 
+    @else {
+        @return #fff;
+    }
+}
+
+@function set-background($color) {
+    @if(lightness($color) > 70){
+        @return #333;
+    } 
+    @else {
+        @return #fff;
+    }
+}
+
+//Set BG Color and Text
+
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color)
+}
+
+@mixin set-text-color($color) {
+    color: $color;
+    background-color: set-background($color)
+}
+
+@mixin set-flex($flex-direction: row, $align-items: flex-start, $justify-content: flex-start) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin set-grid($align-items: stretch, $justify-content: flex-start) {
+    display: grid;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
